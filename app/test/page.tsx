@@ -1,10 +1,9 @@
 "use client";
 
 import { Counter } from "@/components/Counter";
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function A() {
-	const params = useParams();
 	const searchParams = useSearchParams();
 
 	fetch("/api/hello")
@@ -15,7 +14,6 @@ export default function A() {
 	return (
 		<div>
 			Test
-			{JSON.stringify(params)}
 			{JSON.stringify(Array.from(searchParams))}
 			<Counter />
 		</div>
