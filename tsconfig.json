@@ -32,10 +32,12 @@
     "**/*.ts",
     "**/*.tsx",
     "Test-Next/.next/types/**/*.ts",
+    "docs/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "Test-Next/node_modules"
+    "Test-Next/node_modules",
+    "docs/**/*.ts"
   ]
 }

@@ -2,12 +2,12 @@
 
 import { Counter } from "@/components/Counter";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function A() {
+function A() {
 	const searchParams = useSearchParams();
 
 	fetch("/api/hello")
-		.then((res) => res.json())
 		.then((data) => console.log(data))
 		.catch((err) => console.error(err));
 
@@ -17,5 +17,13 @@ export default function A() {
 			{JSON.stringify(Array.from(searchParams))}
 			<Counter />
 		</div>
+	);
+}
+
+export default function Page() {
+	return (
+		<Suspense fallback={"wtf..."}>
+			<A />
+		</Suspense>
 	);
 }
